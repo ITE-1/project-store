@@ -1,0 +1,17 @@
+.accordion {
+
+display: flex;
+flex-direction: column;
+gap: 20px;
+    &__item{
+        width: 400px;
+        border:  2px solid black;
+
+        &__description {
+            &.hide{
+                display: none;
+            }
+            
+        }
+    }
+}

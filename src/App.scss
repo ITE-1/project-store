@@ -1,0 +1,275 @@
+.App{
+  width: 100vw;
+
+   
+}
+.header{
+  
+  width: 100%;
+
+  
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+  background-image: url(./assets/bg.png);
+ 
+  background-position: top;
+  background-repeat: no-repeat;
+&__logo{
+ background-color:#FFAB08 ; 
+ font-size: 26px;
+ color: white;
+
+}
+  &__title{
+    color:white;
+    max-width: 794px;
+    display: flex;
+  
+    @media screen and (max-width: 480px) {
+      display: flex;
+      flex-direction: column;
+    }
+    justify-content: center;
+    align-items: center;
+    
+    &__dscr{
+      max-width: 275px;
+    
+    }
+  }
+}
+
+// }
+// .window{
+//   display: flex;
+//   flex-direction: column;
+//   width: 450px;
+ 
+//   padding: 5px 10px;
+//   border: 2px solid black;
+// }
+// .window__navigation {
+//   margin-bottom: 5%;
+//   margin-top: 5%;
+//   display: flex;
+//   justify-content: space-between;
+// }
+// .section__navigation {
+//   margin-bottom: 10px;
+//   display: flex;
+//   justify-content: space-evenly;
+// }
+// .section {
+// border: 2px solid black;
+// padding: 5px;
+// }
+
+// .active{
+//   background-color: green;
+//   color: white;
+// }
+/* .form {
+  border: 2px solid black;
+  width: 500px;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 15px;
+} */
+
+.navigation{
+  padding-left: 4%;
+  margin-top: 25px;
+  &__list{
+    display: flex;
+    column-gap: 3%;
+    justify-content: center;
+    align-items: center;
+    overflow-x:auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+
+      @media screen and (max-width: 480px) {
+       justify-content: start;
+      }
+    &__item{
+      flex-shrink: 0;
+      scroll-snap-align:start;
+      transition: transform 0.5s ease;
+      cursor: pointer;
+      padding: 5px 10px;
+      border: 2px solid orange;
+      border-radius: 25px;
+      
+      column-gap: 5px;
+      &__link{
+        display: flex;
+        color: inherit;
+        text-decoration: none;
+      }
+      :hover{
+      
+      }
+      &.active{
+        color: white;
+        background-color: darkorange;
+        transform: translateX(1px);
+      }
+    }
+    &__item:hover {
+      color: white;
+      background-color: darkorange;
+    }
+  }
+}
+.burger{
+  margin-top: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.burger__list {
+  
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) ;
+  grid-gap:7%;
+  column-gap: 7%;
+
+  &__item{
+    
+    display: flex;
+    flex-direction: column;
+    padding-left: 2%;
+    padding-right: 2%;
+    
+    -webkit-box-shadow: -2px 7px 7px 10px rgba(240,228,240,1);
+    -moz-box-shadow: -2px 7px 7px 10px rgba(240,228,240,1);
+    box-shadow: -2px 7px 7px 10px rgba(240,228,240,1);
+    button{
+      margin-top: 5%;
+      font-size: 20px;
+      padding: 2%;
+      background-color: rgb(234, 229, 229);
+      border-radius: 25px;
+      margin-bottom: 5%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    grid-gap:5%;
+    column-gap: 5%;
+    grid-template-columns: repeat(2, 1fr); // Две колонки на экранах меньше 768px
+  }
+
+  @media screen and (max-width: 480px) {
+    grid-gap:2%;
+    column-gap: 2%;
+    grid-template-columns: 1fr; // Одна колонка на экранах меньше 480px
+  }
+}
+
+
+//////////////////////////////////////////
+/// 
+///Marketplace 
+.marketplace{
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 1%;
+  padding-right: 1%;
+  position: absolute;
+  margin-top: 3%;
+  left: 1%;
+  width: 300px;
+  z-index: 1000;
+  border: 2px solid black;
+  background-color: hsl(40, 67%, 82%);
+  border-radius: 25px;
+  display: flex;
+  gap: 2%;
+  flex-direction: column;
+ 
+  &:hover{
+    opacity: 1;
+  }
+  @media screen and (max-width: 768px) {
+    
+  }
+  @media screen and (max-width: 480px) {
+    width: 100%;
+    position: static;
+  }
+  &__order{
+    display: block;
+    &.hide{
+      display: none;
+    }
+  }
+  
+  &__title{
+    display: flex;
+    justify-content: space-between;
+   align-items: center;
+    padding: 2%;
+
+    span{
+      padding: 2%;
+      border-radius: 25%;
+      border: 2px solid black;
+    }
+  }
+  &__item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    padding: 2%;
+    border: 2px solid rgb(215, 210, 210);
+   
+    position: relative;
+    &__delete{
+      position: absolute;
+      right: 2%;
+      top: 1%;
+    }
+    img{
+      width: 90px;
+    }
+  }
+
+  &__deposit{
+    padding: 2%;
+    display: flex;
+    justify-content: space-between;
+    h3{
+      font-size: 24px;
+    }
+    span{
+      font-size: 26px;
+    }
+  }
+  &__button{
+    border-radius: 25px;
+    padding: 2%;
+    font-size: 20px;
+    background-color: orange;
+    color: white;
+  }
+  &__hide{
+    margin-top: 5%;
+    text-align: right;
+    opacity: .6;
+    cursor: pointer;
+  }
+}
+
+::-webkit-scrollbar {
+  height: 8px; /* Делаем горизонтальную полосу прокрутки лучше */
+}
+::-webkit-scrollbar-thumb {
+  background: gray; /* Придаем ей серость цвета мокруга */
+}
